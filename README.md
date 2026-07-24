@@ -261,7 +261,7 @@ With this project, I am practicing how to:
 - Work with Windows system information
 - Handle files safely
 - Think in repeatable workflows
-- Use preview modes before making changes
+- Use preview modes before mgit pushaking changes
 - Collect information for troubleshooting
 - Document technical work clearly
 - Use scripting as a tool for practical problem solving
