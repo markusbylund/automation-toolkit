@@ -8,7 +8,7 @@ The goal is to explore how simple automation can reduce repetitive manual work, 
 
 Automation Toolkit is an ongoing project where I build and document small PowerShell scripts for everyday Windows-related tasks.
 
-This is not intended to be a large enterprise automation platform. Instead, it is a focused learning project where I practice scripting, system information gathering, file handling and technical documentation.
+This is not intended to be a large enterprise automation platform. Instead, it is a focused learning project where I practice scripting, system information gathering, file handling, troubleshooting and technical documentation.
 
 ## Why I Built This
 
@@ -20,6 +20,8 @@ Through this project, I want to improve my understanding of:
 - Windows environments
 - System administration basics
 - Automation thinking
+- File handling
+- Network information
 - Practical problem solving
 - Clear technical documentation
 
@@ -29,6 +31,9 @@ Through this project, I want to improve my understanding of:
 |---|---|
 | `system-report.ps1` | Collects basic system information from a Windows computer. |
 | `disk-health-check.ps1` | Checks available disk space and warns when free space is low. |
+| `organize-downloads.ps1` | Sorts files in the Downloads folder by file type. Preview mode by default. |
+| `app-inventory.ps1` | Lists installed applications and exports the result to a CSV file. |
+| `network-info-report.ps1` | Shows basic network information for troubleshooting and documentation. |
 
 ## Script Details
 
@@ -71,32 +76,103 @@ File:
 scripts/disk-health-check.ps1
 ```
 
+### Downloads Organizer
+
+Sorts files in the Downloads folder into category folders based on file type.
+
+The script runs in preview mode by default, so it first shows what it would move before making any changes.
+
+It can sort files into:
+
+- Images
+- Documents
+- Archives
+- Videos
+- Other
+
+File:
+
+```text
+scripts/organize-downloads.ps1
+```
+
+### App Inventory
+
+Lists installed applications from the Windows registry and exports the result to a CSV file.
+
+It can include:
+
+- Application name
+- Version
+- Publisher
+- Install date
+
+File:
+
+```text
+scripts/app-inventory.ps1
+```
+
+Generated report:
+
+```text
+docs/reports/app-inventory.csv
+```
+
+### Network Info Report
+
+Shows basic network information that can be useful for troubleshooting and documentation.
+
+It can show:
+
+- Computer name
+- Network adapter
+- IPv4 address
+- Default gateway
+- DNS servers
+
+File:
+
+```text
+scripts/network-info-report.ps1
+```
+
 ## Planned Improvements
 
 Future scripts may include:
 
-- Downloads folder organizer
-- Installed applications inventory
 - Temporary file cleanup
-- Basic network information report
 - Simple backup helper
 - Startup apps overview
+- Folder size reporter
+- Basic service status check
+- Export reports to both CSV and TXT
 
-## Project Structure
+- ## Project Structure
 
 ```text
 automation-toolkit/
 ├── scripts/
 │   ├── system-report.ps1
-│   └── disk-health-check.ps1
+│   ├── disk-health-check.ps1
+│   ├── organize-downloads.ps1
+│   ├── app-inventory.ps1
+│   └── network-info-report.ps1
 ├── docs/
-│   └── screenshots/
+│   ├── screenshots/
+│   └── reports/
 └── README.md
 ```
 
 ## How To Run
 
 Open PowerShell in the project folder.
+
+If PowerShell blocks script execution, allow scripts for the current terminal session only:
+
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+```
 
 Run the system report:
 
@@ -110,13 +186,29 @@ Run the disk health check:
 .\scripts\disk-health-check.ps1
 ```
 
-If PowerShell blocks script execution, allow scripts for the current terminal session only:
+Run the Downloads organizer in preview mode:
 
 ```powershell
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\scripts\organize-downloads.ps1
 ```
 
-Then run the script again.
+Move files for real:
+
+```powershell
+.\scripts\organize-downloads.ps1 -Apply
+```
+
+Create an app inventory report:
+
+```powershell
+.\scripts\app-inventory.ps1
+```
+
+Show network information:
+
+```powershell
+.\scripts\network-info-report.ps1
+```
 
 ## Example Output
 
@@ -143,6 +235,18 @@ Free space: 128.42 GB
 Free percent: 42.18%
 ```
 
+Example output from `network-info-report.ps1`:
+
+```text
+=== Network Info Report ===
+Computer name: DESKTOP-12345
+
+Adapter: Wi-Fi
+IPv4 address: 192.168.1.25
+IPv4 gateway: 192.168.1.1
+DNS servers: 192.168.1.1
+```
+
 ## Status
 
 Ongoing learning project.
@@ -155,8 +259,10 @@ With this project, I am practicing how to:
 
 - Write readable PowerShell scripts
 - Work with Windows system information
-- Break manual tasks into smaller automated steps
+- Handle files safely
 - Think in repeatable workflows
+- Use preview modes before making changes
+- Collect information for troubleshooting
 - Document technical work clearly
 - Use scripting as a tool for practical problem solving
 
@@ -165,3 +271,4 @@ With this project, I am practicing how to:
 For me, programming and automation are tools for creating smarter and more reliable workflows.
 
 This project helps me explore how small technical improvements can save time, reduce repetitive work and make everyday processes easier to manage.
+
