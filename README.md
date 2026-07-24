@@ -1,38 +1,42 @@
 # Automation Toolkit
 
-Automation Toolkit is an ongoing learning project where I explore how PowerShell and scripting can be used to simplify recurring IT and administrative tasks in a Windows environment.
+A practical learning project focused on PowerShell, Windows automation and small scripts that simplify recurring IT and administrative tasks.
 
-The goal is not to build a large enterprise system, but to practice practical automation, Windows system understanding, scripting and structured problem solving.
+The goal is to explore how simple automation can reduce repetitive manual work, improve structure and build a better understanding of how systems behave behind the user interface.
 
-This project is part of my continued development within automation, system administration and broader IT.
+## Overview
 
-## Purpose
+Automation Toolkit is an ongoing project where I build and document small PowerShell scripts for everyday Windows-related tasks.
 
-The purpose of this project is to better understand how small scripts can reduce repetitive manual work and make everyday technical tasks easier to handle.
+This is not intended to be a large enterprise automation platform. Instead, it is a focused learning project where I practice scripting, system information gathering, file handling and technical documentation.
 
-Through this project, I practice how to collect system information, check system status, organize files and document simple automation workflows.
+## Why I Built This
 
-## What this project shows
+I am interested in how technology can be used to make workflows simpler, more reliable and easier to repeat.
 
-This project shows my interest in:
+Through this project, I want to improve my understanding of:
 
-- Automation
-- PowerShell
+- PowerShell scripting
 - Windows environments
-- Scripting
-- System information
-- File and disk management
+- System administration basics
+- Automation thinking
 - Practical problem solving
-- Self-directed learning
-- Technical documentation
+- Clear technical documentation
 
-## Scripts
+- ## Current Scripts
+
+| Script | Description |
+|---|---|
+| `system-report.ps1` | Collects basic system information from a Windows computer. |
+| `disk-health-check.ps1` | Checks available disk space and warns when free space is low. |
+
+## Script Details
 
 ### System Report
 
-Collects basic system information from a Windows computer.
+Collects basic information about the current Windows machine.
 
-It can show information such as:
+It can show:
 
 - Computer name
 - Current user
@@ -48,34 +52,77 @@ File:
 
 ```text
 scripts/system-report.ps1
-Disk Health Check
-Checks available disk space and gives a warning if free disk space is low.
-It can show information such as:
-Drive letter
-Free space in GB
-Free space in percent
-Warning when available disk space is below a defined limit
+```
+
+### Disk Health Check
+
+Checks disk usage and displays available storage.
+
+It can show:
+
+- Drive letter
+- Free space in GB
+- Free space in percent
+- Warning when free space is below a defined limit
+
 File:
+
+```text
 scripts/disk-health-check.ps1
-Planned scripts
-This project is ongoing. Future scripts may include:
-Downloads folder organizer
-Installed applications inventory
-Temporary file cleanup
-Basic network information report
-Simple backup helper
-Startup apps overview
-How to run
+```
+
+## Planned Improvements
+
+Future scripts may include:
+
+- Downloads folder organizer
+- Installed applications inventory
+- Temporary file cleanup
+- Basic network information report
+- Simple backup helper
+- Startup apps overview
+
+## Project Structure
+
+```text
+automation-toolkit/
+├── scripts/
+│   ├── system-report.ps1
+│   └── disk-health-check.ps1
+├── docs/
+│   └── screenshots/
+└── README.md
+```
+
+## How To Run
+
 Open PowerShell in the project folder.
-Run the system report script:
+
+Run the system report:
+
+```powershell
 .\scripts\system-report.ps1
-Run the disk health check script:
+```
+
+Run the disk health check:
+
+```powershell
 .\scripts\disk-health-check.ps1
-If PowerShell blocks the script, you can allow scripts only for the current terminal session:
+```
+
+If PowerShell blocks script execution, allow scripts for the current terminal session only:
+
+```powershell
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+```
+
 Then run the script again.
-Example output
-Example output from system-report.ps1:
+
+## Example Output
+
+Example output from `system-report.ps1`:
+
+```text
 === System Report ===
 Computer name: DESKTOP-12345
 User: Markus
@@ -86,29 +133,35 @@ Manufacturer: Lenovo
 Model: ThinkPad
 Processor: Intel(R) Core(TM) i7
 RAM: 16 GB
-Example output from disk-health-check.ps1:
+```
+
+Example output from `disk-health-check.ps1`:
+
+```text
 Drive C:
 Free space: 128.42 GB
 Free percent: 42.18%
-Project structure
-automation-toolkit/
-scripts/
-  system-report.ps1
-  disk-health-check.ps1
-docs/
-  screenshots/
-README.md
-Status
+```
+
+## Status
+
 Ongoing learning project.
-The project will grow over time as I add more scripts, improve the documentation and test new automation ideas.
-What I am learning
-With this project I am practicing:
-Writing readable PowerShell scripts
-Working with Windows system information
-Thinking in repeatable workflows
-Breaking manual tasks into smaller automated steps
-Documenting technical work clearly
-Understanding how automation can support real-world IT work
-Reflection
+
+This repository will grow over time as I add more scripts, improve existing ones and document what I learn along the way.
+
+## What I Am Practicing
+
+With this project, I am practicing how to:
+
+- Write readable PowerShell scripts
+- Work with Windows system information
+- Break manual tasks into smaller automated steps
+- Think in repeatable workflows
+- Document technical work clearly
+- Use scripting as a tool for practical problem solving
+
+## Reflection
+
 For me, programming and automation are tools for creating smarter and more reliable workflows.
-This project helps me explore how small technical improvements can save time, reduce repetitive work and improve everyday processes.
+
+This project helps me explore how small technical improvements can save time, reduce repetitive work and make everyday processes easier to manage.
