@@ -6,6 +6,8 @@ The goal is to explore how simple automation can reduce repetitive manual work, 
 
 ## Overview
 
+This repository is part of my learning portfolio and demonstrates practical PowerShell automation.
+
 Automation Toolkit is an ongoing project where I build and document small PowerShell scripts for everyday Windows-related tasks.
 
 This is not intended to be a large enterprise automation platform. Instead, it is a focused learning project where I practice scripting, system information gathering, file handling, troubleshooting and technical documentation.
